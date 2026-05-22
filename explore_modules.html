@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Explore Modules - Bitscert Labs</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#acedff",
+                      "secondary": "#00687a",
+                      "on-background": "#0d1c2e",
+                      "error": "#ba1a1a",
+                      "tertiary": "#943700",
+                      "surface-bright": "#f8f9ff",
+                      "inverse-primary": "#b4c5ff",
+                      "primary": "#004ac6",
+                      "outline-variant": "#c3c6d7",
+                      "on-surface-variant": "#434655",
+                      "inverse-surface": "#233144",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-tertiary-container": "#ffede6",
+                      "tertiary-fixed": "#ffdbcd",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container": "#e6eeff",
+                      "on-secondary-container": "#006172",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "on-secondary-fixed-variant": "#004e5c",
+                      "outline": "#737686",
+                      "secondary-container": "#57dffe",
+                      "on-primary-container": "#eeefff",
+                      "on-surface": "#0d1c2e",
+                      "secondary-fixed-dim": "#4cd7f6",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#0053db",
+                      "surface-container-high": "#dce9ff",
+                      "tertiary-container": "#bc4800",
+                      "surface-variant": "#d5e3fc",
+                      "surface-container-low": "#eff4ff",
+                      "primary-container": "#2563eb",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "on-secondary-fixed": "#001f26",
+                      "surface-dim": "#ccdbf3",
+                      "surface-container-highest": "#d5e3fc",
+                      "on-primary": "#ffffff",
+                      "surface": "#f8f9ff",
+                      "background": "#f8f9ff",
+                      "on-error": "#ffffff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-primary-fixed": "#00174b",
+                      "primary-fixed": "#dbe1ff",
+                      "on-tertiary-fixed": "#360f00",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "container-max": "1280px",
+                      "stack-lg": "48px",
+                      "gutter": "24px",
+                      "stack-sm": "12px",
+                      "margin-desktop": "40px",
+                      "base": "8px",
+                      "stack-md": "24px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": ["Sora"],
+                      "body-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-lg": ["Sora"],
+                      "headline-md": ["Sora"],
+                      "display-lg": ["Sora"]
+              },
+              "fontSize": {
+                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .topology-bg {
+            background-color: #f8f9ff;
+            background-image: radial-gradient(#c3c6d7 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex">
+<aside class="bg-surface dark:bg-surface-dim h-full w-64 fixed left-0 top-0 border-r border-outline-variant flex flex-col p-4 gap-base z-50 hidden md:flex">
+<div class="mb-stack-md px-4 py-2">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Bitscert Labs</h1>
+</div>
+<nav class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-200 ease-in-out rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-lg font-bold font-label-md text-label-md transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">network_check</span>
+                CCNA Modules
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-200 ease-in-out rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">terminal</span>
+                Linux Modules
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-200 ease-in-out rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">biotech</span>
+                Labs
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-200 ease-in-out rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">quiz</span>
+                Quizzes
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-200 ease-in-out rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                Progress Tracker
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-200 ease-in-out rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">groups</span>
+                Community
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all duration-200 ease-in-out rounded-lg font-label-md text-label-md mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</nav>
+</aside>
+<main class="ml-64 flex-1 p-margin-desktop w-full max-w-container-max mx-auto">
+<header class="bg-surface-container-low rounded-xl p-stack-md mb-stack-lg shadow-sm border border-outline-variant/30 flex justify-between items-center relative overflow-hidden topology-bg">
+<div class="relative z-10 max-w-2xl">
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-wider mb-2 block">Curriculum Path</span>
+<h2 class="font-display-lg text-display-lg text-on-background mb-stack-sm">Explore the CCNA Learning Path</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Progress from networking fundamentals to enterprise networking through hands-on labs and guided modules.</p>
+</div>
+<div class="relative z-10 flex items-center gap-6 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/30 shadow-sm">
+<div class="relative w-24 h-24 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-container-high" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="163.28" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<span class="absolute font-headline-md text-headline-md text-on-background">35%</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-wide">Overall Progress</span>
+<span class="font-headline-md text-headline-md text-on-background">2 of 6 Modules</span>
+</div>
+</div>
+</header>
+<div class="mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-2">CCNA 200-301 Curriculum</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Master the foundational topics required for Cisco certification.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<article class="bg-surface rounded-xl p-6 shadow-sm border border-outline-variant/30 flex flex-col hover:shadow-md transition-shadow duration-200">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">router</span>
+</div>
+<span class="px-3 py-1 bg-green-100 text-green-800 rounded-full font-label-sm text-label-sm flex items-center gap-1 border border-green-200">
+<span class="material-symbols-outlined text-sm">check_circle</span> 100% Complete
+</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Network Fundamentals</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-4">Test your knowledge on OSI Model, TCP/IP, and CLI basics with detailed explanations.</p>
+<div class="flex items-center gap-4 mb-6 text-on-surface-variant font-label-sm">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">menu_book</span> 12 Lessons</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-2.5 rounded-lg hover:bg-primary-container transition-colors">Take Quiz</button>
+</article>
+<article class="bg-surface rounded-xl p-6 shadow-sm border-2 border-primary/20 flex flex-col relative overflow-hidden hover:shadow-md transition-shadow duration-200">
+<div class="absolute top-0 left-0 w-full h-1 bg-surface-container"><div class="h-full bg-primary w-[40%]"></div></div>
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">lan</span>
+</div>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-sm text-label-sm">40% In Progress</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Network Access</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-4">Challenge your understanding of VLANs and Wireless architectures through interactive quizzes.</p>
+<div class="flex items-center gap-4 mb-6 text-on-surface-variant font-label-sm">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">menu_book</span> 12 Lessons</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-2.5 rounded-lg hover:bg-primary-container transition-colors">Take Quiz</button>
+</article>
+<article class="bg-surface rounded-xl p-6 shadow-sm border border-outline-variant/30 flex flex-col opacity-75 grayscale-[30%]">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high text-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">route</span>
+</div>
+<span class="px-3 py-1 bg-surface-container-high text-outline rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">lock</span> Locked
+</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">IP Connectivity</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-4">Verify your mastery of OSPF and routing protocols with expert feedback on every answer.</p>
+<div class="flex items-center gap-4 mb-6 text-on-surface-variant font-label-sm">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">menu_book</span> 15 Lessons</div>
+</div>
+<button class="w-full bg-surface-container-high text-outline font-label-md text-label-md py-2.5 rounded-lg cursor-not-allowed" disabled="">Take Quiz</button>
+</article>
+<article class="bg-surface rounded-xl p-6 shadow-sm border border-outline-variant/30 flex flex-col opacity-75 grayscale-[30%]">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high text-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">dns</span>
+</div>
+<span class="px-3 py-1 bg-surface-container-high text-outline rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">lock</span> Locked
+</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">IP Services</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-4">Evaluate your skills in DHCP, DNS, and NAT configuration through comprehensive testing.</p>
+<div class="flex items-center gap-4 mb-6 text-on-surface-variant font-label-sm">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">menu_book</span> 10 Lessons</div>
+</div>
+<button class="w-full bg-surface-container-high text-outline font-label-md text-label-md py-2.5 rounded-lg cursor-not-allowed" disabled="">Take Quiz</button>
+</article>
+<article class="bg-surface rounded-xl p-6 shadow-sm border border-outline-variant/30 flex flex-col opacity-75 grayscale-[30%]">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high text-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">security</span>
+</div>
+<span class="px-3 py-1 bg-surface-container-high text-outline rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">lock</span> Locked
+</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Security Fundamentals</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-4">Assess your security knowledge from ACLs to VPNs with in-depth rationales for correct answers.</p>
+<div class="flex items-center gap-4 mb-6 text-on-surface-variant font-label-sm">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">menu_book</span> 8 Lessons</div>
+</div>
+<button class="w-full bg-surface-container-high text-outline font-label-md text-label-md py-2.5 rounded-lg cursor-not-allowed" disabled="">Take Quiz</button>
+</article>
+<article class="bg-surface rounded-xl p-6 shadow-sm border border-outline-variant/30 flex flex-col opacity-75 grayscale-[30%]">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high text-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">code</span>
+</div>
+<span class="px-3 py-1 bg-surface-container-high text-outline rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">lock</span> Locked
+</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Automation &amp; Prog</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-4">Validate your grasp of APIs and SDN architectures with quizzes designed to reinforce learning.</p>
+<div class="flex items-center gap-4 mb-6 text-on-surface-variant font-label-sm">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">menu_book</span> 6 Lessons</div>
+</div>
+<button class="w-full bg-surface-container-high text-outline font-label-md text-label-md py-2.5 rounded-lg cursor-not-allowed" disabled="">Take Quiz</button>
+</article>
+</div>
+</main>
+</body></html>
